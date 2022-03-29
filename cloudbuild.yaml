@@ -12,4 +12,7 @@
    args: ['build', '-t', 'gcr.io/logical-seat-340007/first-image', '--build-arg=JAR_FILE=target/gcpbuild-0.0.1-SNAPSHOT.jar', '.']
  - name: 'gcr.io/cloud-builders/docker'
    args: ['push', 'gcr.io/logical-seat-340007/first-image']
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   entrypoint: gcloud
+   args: ['run', 'deploy', 'first-service', '--image', 'gcr.io/logical-seat-340007/first-image', '--region', 'REGION']
  images: ['gcr.io/logical-seat-340007/first-image']
