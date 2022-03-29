@@ -14,5 +14,5 @@
    args: ['push', 'gcr.io/logical-seat-340007/first-image']
  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
    entrypoint: gcloud
-   args: ['run', 'deploy', 'first-service', '--image', 'gcr.io/logical-seat-340007/first-image', '--region', 'REGION']
+   args: ['run', 'deploy', 'first-service', '--image', 'gcr.io/logical-seat-340007/first-image', '--region', 'asia-south1']
  images: ['gcr.io/logical-seat-340007/first-image']
