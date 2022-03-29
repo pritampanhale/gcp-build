@@ -8,3 +8,6 @@
  - name: maven:3-jdk-8
    entrypoint: mvn
    args: ['package','-Dmaven.test.skip=true']
+ - name: gcr.io/cloud-builders/docker
+   args: ['build', '-t', 'gcr.io/logical-seat-340007/first-image', '--build-arg=JAR_FILE=target/gcpbuild-0.0.1-SNAPSHOT.jar', '.']
+ images: ['gcr.io/logical-seat-340007/first-image']
