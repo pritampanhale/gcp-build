@@ -21,7 +21,9 @@ public class SpringConfig {
         
         String format = LocalDateTime.now().format(DateTimeFormatter.ofPattern("hhmmss"));
         File file = new File("src/main/resources/output/" + format + ".txt");
+        System.out.println("Creating files");
         file.createNewFile();
+        System.out.println("File created");
 	StringBuilder sb = new StringBuilder();
 	sb.append("TestData");
 	BufferedWriter writer = new BufferedWriter(new FileWriter(file));
