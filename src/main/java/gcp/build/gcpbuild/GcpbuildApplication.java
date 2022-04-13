@@ -9,6 +9,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class GcpbuildApplication {
 
     public static void main(String[] args) {
+	System.out.println("printing env variables");
+	for(String arg : args) {
+	    System.out.println("----->" + arg);
+	}
 	SpringApplication.run(GcpbuildApplication.class, args);
     }
 
