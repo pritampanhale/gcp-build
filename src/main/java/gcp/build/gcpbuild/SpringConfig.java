@@ -1,6 +1,7 @@
 package gcp.build.gcpbuild;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -19,9 +20,11 @@ public class SpringConfig {
         System.out.println("Writing files");
         
         String format = LocalDateTime.now().format(DateTimeFormatter.ofPattern("hhmmss"));
+        File file = new File("src/main/resources/output/" + format + ".txt");
+        file.createNewFile();
 	StringBuilder sb = new StringBuilder();
 	sb.append("TestData");
-	BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/" + format + ".txt", false));
+	BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 	writer.append(sb.toString());
 	writer.close();
     }
