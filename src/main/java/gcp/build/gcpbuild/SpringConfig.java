@@ -20,9 +20,12 @@ public class SpringConfig {
         System.out.println("Writing files");
         
         String format = LocalDateTime.now().format(DateTimeFormatter.ofPattern("hhmmss"));
-        File file = new File("src/main/resources/output/" + format + ".txt");
+        File file = new File("src/main/resources/output1/" + format + ".txt");
         System.out.println("Creating files");
-        file.createNewFile();
+        if (!file.getParentFile().exists())
+            file.getParentFile().mkdirs();
+        if (!file.exists())
+            file.createNewFile();
         System.out.println("File created");
 	StringBuilder sb = new StringBuilder();
 	sb.append("TestData");
